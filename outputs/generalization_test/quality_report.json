@@ -1,0 +1,42 @@
+{
+  "total": 50,
+  "eventCounts": {
+    "交通事故": 8,
+    "道路拥堵": 7,
+    "道路施工": 7,
+    "交通管制": 7,
+    "设施故障": 7,
+    "恶劣天气影响": 7,
+    "违法行为": 7
+  },
+  "difficultyCounts": {
+    "简单": 15,
+    "中等": 20,
+    "复杂": 15
+  },
+  "sourceCounts": {
+    "事故警情": 11,
+    "道路巡查": 15,
+    "交通新闻": 14,
+    "群众投诉": 10
+  },
+  "standardJsonFields": [
+    "source_text",
+    "event_type",
+    "event_type_code",
+    "event_subtype",
+    "event_time_text",
+    "location",
+    "road_name",
+    "vehicles_involved",
+    "vehicle_count",
+    "casualties",
+    "injured_count",
+    "death_count",
+    "road_impact",
+    "occupied_lane",
+    "congestion_level",
+    "disposal_measure",
+    "event_status"
+  ]
+}

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>交通事件文本结构化识别系统</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #667085;
+      --line: #d9e0ea;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #0f766e;
+      --danger: #b42318;
+      --shadow: 0 14px 32px rgba(22, 34, 51, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background: var(--bg);
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 24px 40px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 8px;
+      color: #ffffff;
+      background: var(--primary);
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .version {
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: #ffffff;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel-title {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .panel-body {
+      padding: 18px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 250px;
+      resize: vertical;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      background: #fbfcff;
+      font: inherit;
+      outline: none;
+    }
+
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.13);
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    button {
+      min-height: 42px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: 8px;
+      color: #ffffff;
+      background: var(--primary);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--primary-dark);
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.68;
+    }
+
+    .message {
+      min-height: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .message.error {
+      color: var(--danger);
+    }
+
+    .result-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    pre {
+      min-height: 250px;
+      max-height: 420px;
+      margin: 0;
+      overflow: auto;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #101828;
+      color: #e6edf8;
+      font-size: 13px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 560px;
+      background: #ffffff;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      width: 190px;
+      color: #344054;
+      background: #f8fafc;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    tr:last-child th,
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .empty-cell {
+      color: #98a2b3;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      color: var(--accent);
+      background: #e8f5f2;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 860px) {
+      .page {
+        padding: 20px 14px 28px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 21px;
+      }
+
+      textarea,
+      pre {
+        min-height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">交</div>
+        <h1>交通事件文本结构化识别系统</h1>
+      </div>
+      <div class="version">Demo v1.0</div>
+    </header>
+
+    <section class="layout">
+      <section class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">事件文本</h2>
+          <span class="pill">单条识别</span>
+        </div>
+        <div class="panel-body">
+          <textarea id="inputText">今天上午8点30分，重庆市南岸区学府大道发生两车追尾事故，造成1人轻伤，占用右侧车道，现场通行缓慢，交警正在疏导。</textarea>
+          <div class="actions">
+            <button id="analyzeBtn" type="button">开始识别</button>
+            <div id="message" class="message"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="result-stack">
+        <section class="panel">
+          <div class="panel-header">
+            <h2 class="panel-title">JSON 结果</h2>
+            <div id="jsonStatus" class="status">等待识别</div>
+          </div>
+          <div class="panel-body">
+            <pre id="jsonResult">{}</pre>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2 class="panel-title">字段表格</h2>
+            <div id="tableStatus" class="status">0 个字段</div>
+          </div>
+          <div class="panel-body">
+            <div class="table-wrap">
+              <table>
+                <tbody id="fieldTable">
+                  <tr>
+                    <th>字段</th>
+                    <td class="empty-cell">暂无结果</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const API_URL = "http://127.0.0.1:8000/analyze";
+    const inputText = document.getElementById("inputText");
+    const analyzeBtn = document.getElementById("analyzeBtn");
+    const message = document.getElementById("message");
+    const jsonResult = document.getElementById("jsonResult");
+    const jsonStatus = document.getElementById("jsonStatus");
+    const tableStatus = document.getElementById("tableStatus");
+    const fieldTable = document.getElementById("fieldTable");
+
+    const fieldLabels = {
+      source_text: "原始文本",
+      event_type: "事件类型",
+      event_type_code: "事件类型编码",
+      event_subtype: "事件子类型",
+      event_time_text: "时间描述",
+      location: "事件位置",
+      road_name: "道路名称",
+      vehicles_involved: "涉及车辆",
+      vehicle_count: "车辆数量",
+      casualties: "伤亡情况",
+      injured_count: "受伤人数",
+      death_count: "死亡人数",
+      road_impact: "道路影响",
+      occupied_lane: "占用车道",
+      congestion_level: "拥堵程度",
+      disposal_measure: "处置措施",
+      event_status: "事件状态"
+    };
+
+    function formatValue(value) {
+      if (value === null || value === undefined || value === "") {
+        return "未识别";
+      }
+      if (Array.isArray(value)) {
+        return value.length ? value.join("、") : "未识别";
+      }
+      if (typeof value === "object") {
+        return JSON.stringify(value, null, 2);
+      }
+      return String(value);
+    }
+
+    function renderTable(data) {
+      const entries = Object.entries(data);
+      fieldTable.innerHTML = "";
+      entries.forEach(([key, value]) => {
+        const row = document.createElement("tr");
+        const fieldCell = document.createElement("th");
+        const valueCell = document.createElement("td");
+        fieldCell.textContent = fieldLabels[key] ? `${fieldLabels[key]} (${key})` : key;
+        valueCell.textContent = formatValue(value);
+        if (value === null || value === undefined || value === "" || (Array.isArray(value) && !value.length)) {
+          valueCell.className = "empty-cell";
+        }
+        row.append(fieldCell, valueCell);
+        fieldTable.appendChild(row);
+      });
+      tableStatus.textContent = `${entries.length} 个字段`;
+    }
+
+    function setMessage(text, isError = false) {
+      message.textContent = text;
+      message.className = isError ? "message error" : "message";
+    }
+
+    async function analyzeText() {
+      const text = inputText.value.trim();
+      if (!text) {
+        setMessage("请输入交通事件文本", true);
+        inputText.focus();
+        return;
+      }
+
+      analyzeBtn.disabled = true;
+      analyzeBtn.textContent = "识别中...";
+      setMessage("正在调用识别服务");
+      jsonStatus.textContent = "请求中";
+
+      try {
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ text })
+        });
+
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(data.detail || "识别服务返回异常");
+        }
+
+        jsonResult.textContent = JSON.stringify(data, null, 2);
+        renderTable(data);
+        jsonStatus.textContent = "识别完成";
+        setMessage("识别完成");
+      } catch (error) {
+        jsonStatus.textContent = "请求失败";
+        setMessage(error.message || "无法连接识别服务", true);
+      } finally {
+        analyzeBtn.disabled = false;
+        analyzeBtn.textContent = "开始识别";
+      }
+    }
+
+    analyzeBtn.addEventListener("click", analyzeText);
+  </script>
+</body>
+</html>

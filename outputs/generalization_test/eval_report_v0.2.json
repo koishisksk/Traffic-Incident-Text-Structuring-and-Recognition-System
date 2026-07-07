@@ -1,0 +1,2016 @@
+{
+  "samples_file": "outputs\\generalization_test\\samples_v0.2.xlsx",
+  "system_output_source": "generated_by_current_pipeline",
+  "sample_count": 50,
+  "event_type_accuracy": 0.86,
+  "field_extraction_accuracy": 0.5529,
+  "json_format_accuracy": 1.0,
+  "counts": {
+    "event_type_correct": 43,
+    "event_type_total": 50,
+    "field_correct": 387,
+    "field_total": 700,
+    "json_format_correct": 50,
+    "json_format_total": 50
+  },
+  "field_detail": {
+    "event_subtype": {
+      "accuracy": 0.36,
+      "correct": 18,
+      "total": 50
+    },
+    "event_time_text": {
+      "accuracy": 0.84,
+      "correct": 42,
+      "total": 50
+    },
+    "location": {
+      "accuracy": 0.16,
+      "correct": 8,
+      "total": 50
+    },
+    "road_name": {
+      "accuracy": 0.68,
+      "correct": 34,
+      "total": 50
+    },
+    "vehicles_involved": {
+      "accuracy": 0.18,
+      "correct": 9,
+      "total": 50
+    },
+    "vehicle_count": {
+      "accuracy": 0.8,
+      "correct": 40,
+      "total": 50
+    },
+    "casualties": {
+      "accuracy": 0.94,
+      "correct": 47,
+      "total": 50
+    },
+    "injured_count": {
+      "accuracy": 0.96,
+      "correct": 48,
+      "total": 50
+    },
+    "death_count": {
+      "accuracy": 0.96,
+      "correct": 48,
+      "total": 50
+    },
+    "road_impact": {
+      "accuracy": 0.08,
+      "correct": 4,
+      "total": 50
+    },
+    "occupied_lane": {
+      "accuracy": 0.72,
+      "correct": 36,
+      "total": 50
+    },
+    "congestion_level": {
+      "accuracy": 0.06,
+      "correct": 3,
+      "total": 50
+    },
+    "disposal_measure": {
+      "accuracy": 0.68,
+      "correct": 34,
+      "total": 50
+    },
+    "event_status": {
+      "accuracy": 0.32,
+      "correct": 16,
+      "total": 50
+    }
+  },
+  "errors": [
+    {
+      "id": "G001",
+      "field": "vehicles_involved",
+      "expected": "轿车",
+      "predicted": [
+        "轿车"
+      ]
+    },
+    {
+      "id": "G001",
+      "field": "road_impact",
+      "expected": "占用一条左转车道",
+      "predicted": "占用一条左转车道；通行缓慢"
+    },
+    {
+      "id": "G001",
+      "field": "occupied_lane",
+      "expected": "左转车道",
+      "predicted": "占用一条左转车道"
+    },
+    {
+      "id": "G001",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": "现场通行缓慢"
+    },
+    {
+      "id": "G001",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G002",
+      "field": "event_subtype",
+      "expected": "通行缓慢",
+      "predicted": "车辆缓行"
+    },
+    {
+      "id": "G002",
+      "field": "location",
+      "expected": "松涛路",
+      "predicted": "松涛路早高峰"
+    },
+    {
+      "id": "G002",
+      "field": "vehicles_involved",
+      "expected": null,
+      "predicted": []
+    },
+    {
+      "id": "G002",
+      "field": "road_impact",
+      "expected": "车流量大，车辆行驶缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G002",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": "车辆行驶缓慢"
+    },
+    {
+      "id": "G003",
+      "field": "event_subtype",
+      "expected": "占道施工",
+      "predicted": null
+    },
+    {
+      "id": "G003",
+      "field": "location",
+      "expected": "明珠西路外侧车道",
+      "predicted": "明珠西路外侧车道正在施工"
+    },
+    {
+      "id": "G003",
+      "field": "vehicles_involved",
+      "expected": null,
+      "predicted": []
+    },
+    {
+      "id": "G003",
+      "field": "road_impact",
+      "expected": "外侧车道施工，车辆从内侧车道通行",
+      "predicted": null
+    },
+    {
+      "id": "G003",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G003",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": "处理中"
+    },
+    {
+      "id": "G004",
+      "field": "event_subtype",
+      "expected": "临时管制",
+      "predicted": "临时交通管制"
+    },
+    {
+      "id": "G004",
+      "field": "vehicles_involved",
+      "expected": null,
+      "predicted": []
+    },
+    {
+      "id": "G004",
+      "field": "road_impact",
+      "expected": "车辆需按现场指示绕行",
+      "predicted": null
+    },
+    {
+      "id": "G004",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G004",
+      "field": "disposal_measure",
+      "expected": "现场指示绕行",
+      "predicted": null
+    },
+    {
+      "id": "G005",
+      "field": "vehicles_involved",
+      "expected": null,
+      "predicted": []
+    },
+    {
+      "id": "G005",
+      "field": "road_impact",
+      "expected": "车辆通过时相互抢行",
+      "predicted": null
+    },
+    {
+      "id": "G005",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G005",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": "处理中"
+    },
+    {
+      "id": "G006",
+      "field": "location",
+      "expected": "北山快速路K12路段",
+      "predicted": "北山快速路K12路段突降大雾"
+    },
+    {
+      "id": "G006",
+      "field": "vehicles_involved",
+      "expected": "车辆",
+      "predicted": []
+    },
+    {
+      "id": "G006",
+      "field": "road_impact",
+      "expected": "车辆低速通行",
+      "predicted": null
+    },
+    {
+      "id": "G006",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G006",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G007",
+      "field": "vehicles_involved",
+      "expected": "私家车;非机动车",
+      "predicted": []
+    },
+    {
+      "id": "G007",
+      "field": "occupied_lane",
+      "expected": "非机动车道",
+      "predicted": "占用非机动车道"
+    },
+    {
+      "id": "G007",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G007",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G008",
+      "field": "event_subtype",
+      "expected": "机动车与非机动车碰撞",
+      "predicted": "车辆碰撞"
+    },
+    {
+      "id": "G008",
+      "field": "vehicle_count",
+      "expected": 2,
+      "predicted": null
+    },
+    {
+      "id": "G008",
+      "field": "casualties",
+      "expected": "骑车人轻微受伤",
+      "predicted": null
+    },
+    {
+      "id": "G008",
+      "field": "injured_count",
+      "expected": 1,
+      "predicted": null
+    },
+    {
+      "id": "G008",
+      "field": "death_count",
+      "expected": 0,
+      "predicted": null
+    },
+    {
+      "id": "G008",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G009",
+      "field": "location",
+      "expected": "湖滨北路商圈周边",
+      "predicted": "湖滨北路商圈周边车辆排队明显"
+    },
+    {
+      "id": "G009",
+      "field": "vehicles_involved",
+      "expected": null,
+      "predicted": []
+    },
+    {
+      "id": "G009",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G010",
+      "field": "location",
+      "expected": "锦绣路人行道旁",
+      "predicted": "锦绣路人行道旁施工围挡外扩"
+    },
+    {
+      "id": "G010",
+      "field": "vehicles_involved",
+      "expected": null,
+      "predicted": []
+    },
+    {
+      "id": "G010",
+      "field": "road_impact",
+      "expected": "施工围挡外扩，机动车道变窄",
+      "predicted": null
+    },
+    {
+      "id": "G010",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G011",
+      "field": "event_subtype",
+      "expected": "道路封闭",
+      "predicted": "临时交通管制"
+    },
+    {
+      "id": "G011",
+      "field": "location",
+      "expected": "晨曦大道部分路段",
+      "predicted": "晨曦大道部分路段短时封闭"
+    },
+    {
+      "id": "G011",
+      "field": "vehicles_involved",
+      "expected": "社会车辆",
+      "predicted": []
+    },
+    {
+      "id": "G011",
+      "field": "road_impact",
+      "expected": "短时封闭，社会车辆禁止通行",
+      "predicted": "禁止通行"
+    },
+    {
+      "id": "G011",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G011",
+      "field": "disposal_measure",
+      "expected": "禁止通行",
+      "predicted": null
+    },
+    {
+      "id": "G012",
+      "field": "event_subtype",
+      "expected": "护栏损坏",
+      "predicted": null
+    },
+    {
+      "id": "G012",
+      "field": "event_time_text",
+      "expected": null,
+      "predicted": "夜间"
+    },
+    {
+      "id": "G012",
+      "field": "location",
+      "expected": "星河路",
+      "predicted": "星河路隔离护栏倾斜"
+    },
+    {
+      "id": "G012",
+      "field": "vehicles_involved",
+      "expected": null,
+      "predicted": []
+    },
+    {
+      "id": "G012",
+      "field": "road_impact",
+      "expected": "夜间影响车辆变道观察",
+      "predicted": null
+    },
+    {
+      "id": "G012",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G012",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G013",
+      "field": "event_subtype",
+      "expected": "暴雨积水",
+      "predicted": "道路积水"
+    },
+    {
+      "id": "G013",
+      "field": "location",
+      "expected": "清泉路下穿通道",
+      "predicted": "清泉路下穿通道出现"
+    },
+    {
+      "id": "G013",
+      "field": "vehicles_involved",
+      "expected": "小客车",
+      "predicted": [
+        "小客车"
+      ]
+    },
+    {
+      "id": "G013",
+      "field": "road_impact",
+      "expected": "小客车通行受阻",
+      "predicted": "通行受阻"
+    },
+    {
+      "id": "G013",
+      "field": "congestion_level",
+      "expected": "拥堵",
+      "predicted": null
+    },
+    {
+      "id": "G014",
+      "field": "event_subtype",
+      "expected": "闯红灯",
+      "predicted": "车辆刮碰"
+    },
+    {
+      "id": "G014",
+      "field": "vehicles_involved",
+      "expected": "小货车;轿车",
+      "predicted": [
+        "轿车",
+        "货车"
+      ]
+    },
+    {
+      "id": "G014",
+      "field": "vehicle_count",
+      "expected": 2,
+      "predicted": 1
+    },
+    {
+      "id": "G014",
+      "field": "road_impact",
+      "expected": "车辆发生刮碰",
+      "predicted": null
+    },
+    {
+      "id": "G014",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G015",
+      "field": "vehicles_involved",
+      "expected": "面包车",
+      "predicted": [
+        "面包车"
+      ]
+    },
+    {
+      "id": "G015",
+      "field": "casualties",
+      "expected": "无人员被困",
+      "predicted": null
+    },
+    {
+      "id": "G015",
+      "field": "injured_count",
+      "expected": 0,
+      "predicted": null
+    },
+    {
+      "id": "G015",
+      "field": "death_count",
+      "expected": 0,
+      "predicted": null
+    },
+    {
+      "id": "G015",
+      "field": "occupied_lane",
+      "expected": "右侧车道",
+      "predicted": "占用右侧车道"
+    },
+    {
+      "id": "G015",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G015",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G016",
+      "field": "event_subtype",
+      "expected": "严重拥堵",
+      "predicted": "车辆缓行"
+    },
+    {
+      "id": "G016",
+      "field": "location",
+      "expected": "双岭隧道北口进城方向；匝道口",
+      "predicted": "双岭隧道北口"
+    },
+    {
+      "id": "G016",
+      "field": "vehicles_involved",
+      "expected": "车辆",
+      "predicted": []
+    },
+    {
+      "id": "G016",
+      "field": "road_impact",
+      "expected": "隧道内车辆走走停停，队尾延伸至匝道口",
+      "predicted": "车流集中"
+    },
+    {
+      "id": "G016",
+      "field": "congestion_level",
+      "expected": "严重拥堵",
+      "predicted": null
+    },
+    {
+      "id": "G017",
+      "field": "location",
+      "expected": "枫林一路由东向西方向；公交车站",
+      "predicted": "枫林一路由东向西方向"
+    },
+    {
+      "id": "G017",
+      "field": "vehicles_involved",
+      "expected": "公交车",
+      "predicted": [
+        "公交车"
+      ]
+    },
+    {
+      "id": "G017",
+      "field": "road_impact",
+      "expected": "封闭一条直行车道，公交车站临时迁移",
+      "predicted": null
+    },
+    {
+      "id": "G017",
+      "field": "occupied_lane",
+      "expected": "一条直行车道",
+      "predicted": "直行车道"
+    },
+    {
+      "id": "G017",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G017",
+      "field": "disposal_measure",
+      "expected": "公交车站临时向前迁移约80米",
+      "predicted": null
+    },
+    {
+      "id": "G017",
+      "field": "event_status",
+      "expected": "处理中",
+      "predicted": "发生中"
+    },
+    {
+      "id": "G018",
+      "field": "event_subtype",
+      "expected": "限行措施",
+      "predicted": "临时交通管制"
+    },
+    {
+      "id": "G018",
+      "field": "event_time_text",
+      "expected": "放学时段",
+      "predicted": null
+    },
+    {
+      "id": "G018",
+      "field": "location",
+      "expected": "龙吟路小学门前；支路口",
+      "predicted": "接送车辆在支路口反复掉头"
+    },
+    {
+      "id": "G018",
+      "field": "vehicles_involved",
+      "expected": "接送车辆",
+      "predicted": []
+    },
+    {
+      "id": "G018",
+      "field": "road_impact",
+      "expected": "接送车辆在支路口反复掉头",
+      "predicted": null
+    },
+    {
+      "id": "G018",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G018",
+      "field": "disposal_measure",
+      "expected": "临时限行",
+      "predicted": null
+    },
+    {
+      "id": "G018",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G019",
+      "field": "location",
+      "expected": "长宁大道与柏林街交叉口东侧",
+      "predicted": "长宁大道与柏林街交叉口"
+    },
+    {
+      "id": "G019",
+      "field": "vehicles_involved",
+      "expected": "右转车辆",
+      "predicted": []
+    },
+    {
+      "id": "G019",
+      "field": "road_impact",
+      "expected": "行人和右转车辆通行冲突明显",
+      "predicted": null
+    },
+    {
+      "id": "G019",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G020",
+      "field": "event_subtype",
+      "expected": "降雪结冰",
+      "predicted": "道路积水"
+    },
+    {
+      "id": "G020",
+      "field": "location",
+      "expected": "青峰山连接线部分弯道",
+      "predicted": "青峰山连接线部分弯道路面湿滑"
+    },
+    {
+      "id": "G020",
+      "field": "road_name",
+      "expected": "青峰山连接线",
+      "predicted": "青峰山连接线部分弯道路"
+    },
+    {
+      "id": "G020",
+      "field": "vehicles_involved",
+      "expected": "货车",
+      "predicted": [
+        "货车"
+      ]
+    },
+    {
+      "id": "G020",
+      "field": "road_impact",
+      "expected": "路面湿滑，货车上坡困难",
+      "predicted": null
+    },
+    {
+      "id": "G020",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G020",
+      "field": "disposal_measure",
+      "expected": "撒布融雪剂",
+      "predicted": null
+    },
+    {
+      "id": "G020",
+      "field": "event_status",
+      "expected": "处理中",
+      "predicted": null
+    },
+    {
+      "id": "G021",
+      "field": "location",
+      "expected": "环湖东路观景台附近",
+      "predicted": "环湖东路观景台附近旅游大巴长时间占用应急车道上下客"
+    },
+    {
+      "id": "G021",
+      "field": "vehicles_involved",
+      "expected": "旅游大巴;车辆",
+      "predicted": []
+    },
+    {
+      "id": "G021",
+      "field": "road_impact",
+      "expected": "后方车辆只能并线绕行",
+      "predicted": "占用应急车道"
+    },
+    {
+      "id": "G021",
+      "field": "occupied_lane",
+      "expected": "应急车道",
+      "predicted": "占用应急车道"
+    },
+    {
+      "id": "G021",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G021",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G022",
+      "field": "road_name",
+      "expected": "白沙大道高架",
+      "predicted": "白沙大道"
+    },
+    {
+      "id": "G022",
+      "field": "vehicle_count",
+      "expected": 2,
+      "predicted": null
+    },
+    {
+      "id": "G022",
+      "field": "road_impact",
+      "expected": "货物散落，占用右侧两条车道",
+      "predicted": "占用右侧两条车道"
+    },
+    {
+      "id": "G022",
+      "field": "occupied_lane",
+      "expected": "右侧两条车道",
+      "predicted": "占用右侧两条车道"
+    },
+    {
+      "id": "G022",
+      "field": "congestion_level",
+      "expected": "拥堵",
+      "predicted": null
+    },
+    {
+      "id": "G022",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G023",
+      "field": "event_subtype",
+      "expected": "车辆排队",
+      "predicted": "车辆缓行"
+    },
+    {
+      "id": "G023",
+      "field": "location",
+      "expected": "世纪大道会展中心段；停车场出口",
+      "predicted": "停车场出口车辆排队至主路"
+    },
+    {
+      "id": "G023",
+      "field": "vehicles_involved",
+      "expected": "车辆",
+      "predicted": []
+    },
+    {
+      "id": "G023",
+      "field": "road_impact",
+      "expected": "停车场出口车辆排队至主路，影响直行车辆",
+      "predicted": "车流集中"
+    },
+    {
+      "id": "G024",
+      "field": "location",
+      "expected": "丁香路北侧辅道；地铁站出入口",
+      "predicted": "丁香路北侧辅道施工占道"
+    },
+    {
+      "id": "G024",
+      "field": "vehicles_involved",
+      "expected": "非机动车",
+      "predicted": []
+    },
+    {
+      "id": "G024",
+      "field": "road_impact",
+      "expected": "北侧辅道施工占道，非机动车借用人行道慢行",
+      "predicted": null
+    },
+    {
+      "id": "G024",
+      "field": "occupied_lane",
+      "expected": "北侧辅道",
+      "predicted": null
+    },
+    {
+      "id": "G024",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G024",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G025",
+      "field": "event_subtype",
+      "expected": "半幅通行",
+      "predicted": null
+    },
+    {
+      "id": "G025",
+      "field": "location",
+      "expected": "竹园路与新城街之间",
+      "predicted": "货车禁止进入施工路段"
+    },
+    {
+      "id": "G025",
+      "field": "vehicles_involved",
+      "expected": "货车",
+      "predicted": [
+        "货车"
+      ]
+    },
+    {
+      "id": "G025",
+      "field": "road_impact",
+      "expected": "实行半幅通行，货车禁止进入施工路段",
+      "predicted": null
+    },
+    {
+      "id": "G025",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G025",
+      "field": "disposal_measure",
+      "expected": "货车禁止进入",
+      "predicted": null
+    },
+    {
+      "id": "G025",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G026",
+      "field": "location",
+      "expected": "康乐路公交港湾前方",
+      "predicted": "康乐路公交港湾前方井盖松动"
+    },
+    {
+      "id": "G026",
+      "field": "vehicles_involved",
+      "expected": "公交车",
+      "predicted": [
+        "公交车"
+      ]
+    },
+    {
+      "id": "G026",
+      "field": "road_impact",
+      "expected": "公交车进站时需急打方向避让",
+      "predicted": null
+    },
+    {
+      "id": "G026",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G026",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G027",
+      "field": "event_subtype",
+      "expected": "强对流天气影响",
+      "predicted": null
+    },
+    {
+      "id": "G027",
+      "field": "location",
+      "expected": "机场北路桥下；主线",
+      "predicted": "机场北路部分车辆临时停靠在桥下避险"
+    },
+    {
+      "id": "G027",
+      "field": "vehicles_involved",
+      "expected": "车辆",
+      "predicted": []
+    },
+    {
+      "id": "G027",
+      "field": "road_impact",
+      "expected": "部分车辆临时停靠避险，主线通行速度下降",
+      "predicted": null
+    },
+    {
+      "id": "G027",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G027",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G028",
+      "field": "location",
+      "expected": "江湾路口机动车道",
+      "predicted": "江湾路口"
+    },
+    {
+      "id": "G028",
+      "field": "vehicle_count",
+      "expected": 2,
+      "predicted": 1
+    },
+    {
+      "id": "G028",
+      "field": "road_impact",
+      "expected": "对向小客车急刹避让",
+      "predicted": null
+    },
+    {
+      "id": "G028",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G029",
+      "field": "event_subtype",
+      "expected": "撞护栏事故",
+      "predicted": "车辆碰撞"
+    },
+    {
+      "id": "G029",
+      "field": "location",
+      "expected": "瑞云路隧道内检修带护栏",
+      "predicted": "瑞云路隧道内"
+    },
+    {
+      "id": "G029",
+      "field": "road_name",
+      "expected": "瑞云路隧道",
+      "predicted": "瑞云路"
+    },
+    {
+      "id": "G029",
+      "field": "vehicles_involved",
+      "expected": "小客车;车辆",
+      "predicted": [
+        "小客车"
+      ]
+    },
+    {
+      "id": "G029",
+      "field": "road_impact",
+      "expected": "后方车辆排队约200米",
+      "predicted": "车辆排队约200米"
+    },
+    {
+      "id": "G029",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G030",
+      "field": "location",
+      "expected": "南浦广场地下车库出口；迎春路",
+      "predicted": "南浦广场地下车库出口排队外溢到迎春路"
+    },
+    {
+      "id": "G030",
+      "field": "road_name",
+      "expected": "迎春路",
+      "predicted": "南浦广场地下车库出口排队外溢到迎春路"
+    },
+    {
+      "id": "G030",
+      "field": "vehicles_involved",
+      "expected": "右转车辆",
+      "predicted": []
+    },
+    {
+      "id": "G030",
+      "field": "road_impact",
+      "expected": "车库出口排队外溢到迎春路，右转车辆受阻",
+      "predicted": null
+    },
+    {
+      "id": "G030",
+      "field": "congestion_level",
+      "expected": "拥堵",
+      "predicted": null
+    },
+    {
+      "id": "G030",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G031",
+      "field": "event_subtype",
+      "expected": "道路维修",
+      "predicted": "道路抢修"
+    },
+    {
+      "id": "G031",
+      "field": "event_time_text",
+      "expected": "今天上午",
+      "predicted": null
+    },
+    {
+      "id": "G031",
+      "field": "location",
+      "expected": "长青路桥面",
+      "predicted": "长青路桥面伸缩缝维修今天上午启动"
+    },
+    {
+      "id": "G031",
+      "field": "vehicles_involved",
+      "expected": null,
+      "predicted": []
+    },
+    {
+      "id": "G031",
+      "field": "road_impact",
+      "expected": "双向各保留一条车道",
+      "predicted": null
+    },
+    {
+      "id": "G031",
+      "field": "occupied_lane",
+      "expected": "桥面部分车道",
+      "predicted": null
+    },
+    {
+      "id": "G031",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G031",
+      "field": "disposal_measure",
+      "expected": "现场摆放锥桶",
+      "predicted": null
+    },
+    {
+      "id": "G031",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G032",
+      "field": "location",
+      "expected": "科创三路园区门前；雅竹街",
+      "predicted": "社会车辆需从雅竹街绕行"
+    },
+    {
+      "id": "G032",
+      "field": "road_name",
+      "expected": "科创三路；雅竹街",
+      "predicted": "科创三路"
+    },
+    {
+      "id": "G032",
+      "field": "vehicles_involved",
+      "expected": "社会车辆",
+      "predicted": []
+    },
+    {
+      "id": "G032",
+      "field": "road_impact",
+      "expected": "社会车辆需从雅竹街绕行",
+      "predicted": null
+    },
+    {
+      "id": "G032",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G032",
+      "field": "disposal_measure",
+      "expected": "绕行雅竹街",
+      "predicted": null
+    },
+    {
+      "id": "G033",
+      "field": "event_subtype",
+      "expected": "指示屏故障",
+      "predicted": null
+    },
+    {
+      "id": "G033",
+      "field": "location",
+      "expected": "滨湖隧道入口",
+      "predicted": "滨湖隧道入口可变车道指示屏故障"
+    },
+    {
+      "id": "G033",
+      "field": "vehicles_involved",
+      "expected": "车辆",
+      "predicted": []
+    },
+    {
+      "id": "G033",
+      "field": "road_impact",
+      "expected": "入口车辆按地面标线通行",
+      "predicted": null
+    },
+    {
+      "id": "G033",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G033",
+      "field": "disposal_measure",
+      "expected": "按地面标线通行",
+      "predicted": null
+    },
+    {
+      "id": "G033",
+      "field": "event_status",
+      "expected": "处理中",
+      "predicted": null
+    },
+    {
+      "id": "G034",
+      "field": "event_subtype",
+      "expected": "道路积水",
+      "predicted": "雨后积水"
+    },
+    {
+      "id": "G034",
+      "field": "event_time_text",
+      "expected": "连续降雨后",
+      "predicted": "连续降雨"
+    },
+    {
+      "id": "G034",
+      "field": "location",
+      "expected": "银沙路低洼点",
+      "predicted": "连续降雨后银沙路低洼点"
+    },
+    {
+      "id": "G034",
+      "field": "road_name",
+      "expected": "银沙路",
+      "predicted": "连续降雨后银沙路"
+    },
+    {
+      "id": "G034",
+      "field": "vehicles_involved",
+      "expected": "电动车",
+      "predicted": [
+        "电动车"
+      ]
+    },
+    {
+      "id": "G034",
+      "field": "road_impact",
+      "expected": "积水漫过路缘，电动车只能推行通过",
+      "predicted": null
+    },
+    {
+      "id": "G034",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G034",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G035",
+      "field": "event_subtype",
+      "expected": "酒驾",
+      "predicted": null
+    },
+    {
+      "id": "G035",
+      "field": "location",
+      "expected": "开元路检查区外侧车道",
+      "predicted": "开元路一名驾驶人涉嫌酒驾"
+    },
+    {
+      "id": "G035",
+      "field": "vehicles_involved",
+      "expected": "车辆",
+      "predicted": []
+    },
+    {
+      "id": "G035",
+      "field": "vehicle_count",
+      "expected": 1,
+      "predicted": null
+    },
+    {
+      "id": "G035",
+      "field": "road_impact",
+      "expected": "车辆停在检查区外侧车道接受处理",
+      "predicted": "车辆停在检查区外侧车道"
+    },
+    {
+      "id": "G035",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G035",
+      "field": "disposal_measure",
+      "expected": "接受处理",
+      "predicted": null
+    },
+    {
+      "id": "G035",
+      "field": "event_status",
+      "expected": "处理中",
+      "predicted": "发生中"
+    },
+    {
+      "id": "G036",
+      "field": "event_subtype",
+      "expected": "多车事故",
+      "predicted": "追尾事故"
+    },
+    {
+      "id": "G036",
+      "field": "event_time_text",
+      "expected": "7时40分左右",
+      "predicted": null
+    },
+    {
+      "id": "G036",
+      "field": "location",
+      "expected": "芙蓉高架由西向东月华匝道至中央公园出口之间",
+      "predicted": "芙蓉高架由西向东在月华匝道至中央公园出口之间"
+    },
+    {
+      "id": "G036",
+      "field": "road_name",
+      "expected": "芙蓉高架；月华匝道；中央公园出口",
+      "predicted": "芙蓉高架"
+    },
+    {
+      "id": "G036",
+      "field": "vehicles_involved",
+      "expected": "厢式货车;小客车;公交车",
+      "predicted": [
+        "货车",
+        "小客车",
+        "公交车"
+      ]
+    },
+    {
+      "id": "G036",
+      "field": "vehicle_count",
+      "expected": 3,
+      "predicted": null
+    },
+    {
+      "id": "G036",
+      "field": "casualties",
+      "expected": "1人轻伤",
+      "predicted": "1人受伤"
+    },
+    {
+      "id": "G036",
+      "field": "road_impact",
+      "expected": "占用中间和右侧两条车道，队尾排至月华匝道",
+      "predicted": "占用中间和右侧两条车道"
+    },
+    {
+      "id": "G036",
+      "field": "occupied_lane",
+      "expected": "中间和右侧两条车道",
+      "predicted": "占用中间和右侧两条车道"
+    },
+    {
+      "id": "G036",
+      "field": "congestion_level",
+      "expected": "严重拥堵",
+      "predicted": null
+    },
+    {
+      "id": "G036",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G037",
+      "field": "event_subtype",
+      "expected": "严重拥堵",
+      "predicted": "车辆排队"
+    },
+    {
+      "id": "G037",
+      "field": "location",
+      "expected": "金石大道进城方向莲花立交至体育馆西门；辅路停车场出口；主路掉头口；公交站",
+      "predicted": "金石大道进城方向从莲花立交到体育馆西门车流持续积压"
+    },
+    {
+      "id": "G037",
+      "field": "road_name",
+      "expected": "金石大道；莲花立交",
+      "predicted": "金石大道"
+    },
+    {
+      "id": "G037",
+      "field": "road_impact",
+      "expected": "多点排队，车辆相互穿插，通行效率明显下降",
+      "predicted": null
+    },
+    {
+      "id": "G037",
+      "field": "congestion_level",
+      "expected": "严重拥堵",
+      "predicted": null
+    },
+    {
+      "id": "G037",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": "处理中"
+    },
+    {
+      "id": "G038",
+      "field": "event_subtype",
+      "expected": "分阶段占道施工",
+      "predicted": "施工临时封闭"
+    },
+    {
+      "id": "G038",
+      "field": "location",
+      "expected": "鹭岛路与平安街交叉口至滨江南路段",
+      "predicted": "鹭岛路与平安街交叉口"
+    },
+    {
+      "id": "G038",
+      "field": "road_name",
+      "expected": "鹭岛路；平安街；滨江南路",
+      "predicted": "鹭岛路；平安街"
+    },
+    {
+      "id": "G038",
+      "field": "vehicles_involved",
+      "expected": "公交车;社会车辆",
+      "predicted": [
+        "公交车"
+      ]
+    },
+    {
+      "id": "G038",
+      "field": "road_impact",
+      "expected": "分两阶段占道，封闭南向北两条直行车道并调整公交站点",
+      "predicted": null
+    },
+    {
+      "id": "G038",
+      "field": "occupied_lane",
+      "expected": "南向北两条直行车道",
+      "predicted": "第一阶段封闭南向北两条直行车道"
+    },
+    {
+      "id": "G038",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G038",
+      "field": "disposal_measure",
+      "expected": "按诱导屏绕行",
+      "predicted": null
+    },
+    {
+      "id": "G039",
+      "field": "event_subtype",
+      "expected": "活动交通管制",
+      "predicted": "临时交通管制"
+    },
+    {
+      "id": "G039",
+      "field": "event_time_text",
+      "expected": "大型演唱会散场期间",
+      "predicted": null
+    },
+    {
+      "id": "G039",
+      "field": "location",
+      "expected": "奥体东路；星光南街；会展支路；P3停车场；春晖大道",
+      "predicted": "周边社会车辆需绕行春晖大道"
+    },
+    {
+      "id": "G039",
+      "field": "road_name",
+      "expected": "奥体东路；星光南街；会展支路；春晖大道",
+      "predicted": "星光南街；会展支路"
+    },
+    {
+      "id": "G039",
+      "field": "vehicles_involved",
+      "expected": "出租车;网约车;公交接驳车;社会车辆",
+      "predicted": [
+        "出租车",
+        "网约车"
+      ]
+    },
+    {
+      "id": "G039",
+      "field": "road_impact",
+      "expected": "分时段管制，部分车辆限制落客，周边车辆绕行",
+      "predicted": null
+    },
+    {
+      "id": "G039",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G039",
+      "field": "disposal_measure",
+      "expected": "公交接驳车优先通行，社会车辆绕行春晖大道",
+      "predicted": null
+    },
+    {
+      "id": "G039",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G040",
+      "field": "event_subtype",
+      "expected": "多设施故障",
+      "predicted": "信号灯故障"
+    },
+    {
+      "id": "G040",
+      "field": "location",
+      "expected": "松江立交西侧匝道；桥下",
+      "predicted": "松江立交"
+    },
+    {
+      "id": "G040",
+      "field": "road_impact",
+      "expected": "车辆多次急停，后方短时排队",
+      "predicted": null
+    },
+    {
+      "id": "G040",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G041",
+      "field": "event_subtype",
+      "expected": "暴雨大风影响",
+      "predicted": null
+    },
+    {
+      "id": "G041",
+      "field": "location",
+      "expected": "外港高速临海收费站至北港互通路段；收费站外",
+      "predicted": "外港高速临海收费站至北港互通路段多处"
+    },
+    {
+      "id": "G041",
+      "field": "road_name",
+      "expected": "外港高速；临海收费站；北港互通",
+      "predicted": "外港高速临海收费站"
+    },
+    {
+      "id": "G041",
+      "field": "vehicles_involved",
+      "expected": "危化品车;旅游客车;小客车",
+      "predicted": [
+        "小客车",
+        "危化品车"
+      ]
+    },
+    {
+      "id": "G041",
+      "field": "road_impact",
+      "expected": "多处积水，部分标志牌倾斜，车辆降速通行",
+      "predicted": null
+    },
+    {
+      "id": "G041",
+      "field": "congestion_level",
+      "expected": "拥堵",
+      "predicted": null
+    },
+    {
+      "id": "G041",
+      "field": "disposal_measure",
+      "expected": "收费站外实施分流",
+      "predicted": "交警在收费站外实施分流"
+    },
+    {
+      "id": "G041",
+      "field": "event_status",
+      "expected": "处理中",
+      "predicted": "发生中"
+    },
+    {
+      "id": "G042",
+      "field": "event_subtype",
+      "expected": "多类违法行为",
+      "predicted": "违法上下客"
+    },
+    {
+      "id": "G042",
+      "field": "event_time_text",
+      "expected": "晚间",
+      "predicted": null
+    },
+    {
+      "id": "G042",
+      "field": "location",
+      "expected": "华庭路美食街周边；公交站；机动车道",
+      "predicted": "华庭路美食街周边晚间存在外卖电动车逆行、网约车占用公交站上下客、私家车违停三类问题"
+    },
+    {
+      "id": "G042",
+      "field": "vehicles_involved",
+      "expected": "外卖电动车;网约车;私家车;公交车;非机动车",
+      "predicted": [
+        "公交车",
+        "网约车",
+        "电动车"
+      ]
+    },
+    {
+      "id": "G042",
+      "field": "road_impact",
+      "expected": "公交车无法正常靠站，非机动车被迫进入机动车道",
+      "predicted": null
+    },
+    {
+      "id": "G042",
+      "field": "occupied_lane",
+      "expected": "公交站；机动车道",
+      "predicted": null
+    },
+    {
+      "id": "G042",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G042",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G043",
+      "field": "event_subtype",
+      "expected": "多车连续事故",
+      "predicted": "追尾事故"
+    },
+    {
+      "id": "G043",
+      "field": "event_time_text",
+      "expected": "晚间",
+      "predicted": null
+    },
+    {
+      "id": "G043",
+      "field": "location",
+      "expected": "莲池大道东向西接近凤鸣路口处",
+      "predicted": "晚间莲池大道东向西接近凤鸣路口处"
+    },
+    {
+      "id": "G043",
+      "field": "road_name",
+      "expected": "莲池大道；凤鸣路",
+      "predicted": "晚间莲池大道"
+    },
+    {
+      "id": "G043",
+      "field": "vehicle_count",
+      "expected": 4,
+      "predicted": 2
+    },
+    {
+      "id": "G043",
+      "field": "road_impact",
+      "expected": "散落物占用左侧车道和部分掉头车道",
+      "predicted": "占用左侧车道和部分掉头车道"
+    },
+    {
+      "id": "G043",
+      "field": "occupied_lane",
+      "expected": "左侧车道；部分掉头车道",
+      "predicted": "占用左侧车道和部分掉头车道"
+    },
+    {
+      "id": "G043",
+      "field": "congestion_level",
+      "expected": "拥堵",
+      "predicted": null
+    },
+    {
+      "id": "G043",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G044",
+      "field": "event_subtype",
+      "expected": "多点排队拥堵",
+      "predicted": "车辆排队"
+    },
+    {
+      "id": "G044",
+      "field": "location",
+      "expected": "东河隧道南口；北口；相邻辅路；滨河二路入口",
+      "predicted": "排队影响到滨河二路入口"
+    },
+    {
+      "id": "G044",
+      "field": "road_name",
+      "expected": "东河隧道；滨河二路",
+      "predicted": "东河隧道"
+    },
+    {
+      "id": "G044",
+      "field": "road_impact",
+      "expected": "隧道两端和辅路排队，影响滨河二路入口",
+      "predicted": null
+    },
+    {
+      "id": "G044",
+      "field": "congestion_level",
+      "expected": "严重拥堵",
+      "predicted": null
+    },
+    {
+      "id": "G045",
+      "field": "location",
+      "expected": "梅园路路口至小区出口；学校门前接送区",
+      "predicted": "梅园路排污管施工围挡从路口延伸到小区出口"
+    },
+    {
+      "id": "G045",
+      "field": "vehicles_involved",
+      "expected": "小区车辆;公交车;送货货车",
+      "predicted": [
+        "货车",
+        "公交车"
+      ]
+    },
+    {
+      "id": "G045",
+      "field": "road_impact",
+      "expected": "只剩一条车道，车辆交织通行，学校门前接送区被压缩",
+      "predicted": null
+    },
+    {
+      "id": "G045",
+      "field": "occupied_lane",
+      "expected": "多条机动车道",
+      "predicted": null
+    },
+    {
+      "id": "G045",
+      "field": "congestion_level",
+      "expected": "拥堵",
+      "predicted": null
+    },
+    {
+      "id": "G045",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G046",
+      "field": "event_subtype",
+      "expected": "活动交通管制",
+      "predicted": null
+    },
+    {
+      "id": "G046",
+      "field": "location",
+      "expected": "江月桥主桥；滨水路观景平台入口；江南大道下穿匝道",
+      "predicted": "公交线路临时改道"
+    },
+    {
+      "id": "G046",
+      "field": "road_name",
+      "expected": "江月桥；滨水路；江南大道",
+      "predicted": "江月桥"
+    },
+    {
+      "id": "G046",
+      "field": "vehicles_involved",
+      "expected": "公交车;网约车;行人",
+      "predicted": [
+        "网约车"
+      ]
+    },
+    {
+      "id": "G046",
+      "field": "road_impact",
+      "expected": "多处同步管制，公交改道，网约车不得桥头停靠，行人分批放行",
+      "predicted": null
+    },
+    {
+      "id": "G046",
+      "field": "congestion_level",
+      "expected": "未知",
+      "predicted": null
+    },
+    {
+      "id": "G046",
+      "field": "disposal_measure",
+      "expected": "公交线路临时改道，行人通道分批放行",
+      "predicted": null
+    },
+    {
+      "id": "G046",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    },
+    {
+      "id": "G047",
+      "field": "event_subtype",
+      "expected": "标志牌缺失",
+      "predicted": null
+    },
+    {
+      "id": "G047",
+      "field": "location",
+      "expected": "机场南线彩虹桥下方",
+      "predicted": "旁边路灯不亮"
+    },
+    {
+      "id": "G047",
+      "field": "road_name",
+      "expected": "机场南线；彩虹桥",
+      "predicted": "机场南线彩虹桥"
+    },
+    {
+      "id": "G047",
+      "field": "vehicles_involved",
+      "expected": "大型客车;厢式货车;小客车",
+      "predicted": [
+        "货车",
+        "小客车"
+      ]
+    },
+    {
+      "id": "G047",
+      "field": "road_impact",
+      "expected": "车辆反复减速确认，后方小客车排队避让",
+      "predicted": null
+    },
+    {
+      "id": "G047",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G048",
+      "field": "event_subtype",
+      "expected": "台风降雨积水",
+      "predicted": "降雨积水"
+    },
+    {
+      "id": "G048",
+      "field": "location",
+      "expected": "海港大道涵洞；涵洞两端",
+      "predicted": "台风外围降雨导致海港大道涵洞"
+    },
+    {
+      "id": "G048",
+      "field": "road_name",
+      "expected": "海港大道",
+      "predicted": "台风外围降雨导致海港大道"
+    },
+    {
+      "id": "G048",
+      "field": "vehicle_count",
+      "expected": 4,
+      "predicted": 1
+    },
+    {
+      "id": "G048",
+      "field": "road_impact",
+      "expected": "小轿车涉水熄火，公交车等待，后方车辆排队",
+      "predicted": null
+    },
+    {
+      "id": "G048",
+      "field": "congestion_level",
+      "expected": "拥堵",
+      "predicted": null
+    },
+    {
+      "id": "G048",
+      "field": "disposal_measure",
+      "expected": "交警封控涵洞两端",
+      "predicted": null
+    },
+    {
+      "id": "G048",
+      "field": "event_status",
+      "expected": "处理中",
+      "predicted": null
+    },
+    {
+      "id": "G049",
+      "field": "event_subtype",
+      "expected": "多类违法行为",
+      "predicted": null
+    },
+    {
+      "id": "G049",
+      "field": "location",
+      "expected": "晨风大道快速入口；匝道；检查区",
+      "predicted": "晨风大道快速入口查处多起违法行为"
+    },
+    {
+      "id": "G049",
+      "field": "vehicle_count",
+      "expected": 3,
+      "predicted": 1
+    },
+    {
+      "id": "G049",
+      "field": "road_impact",
+      "expected": "短时占用检查区和右侧车道",
+      "predicted": "占用检查区和右侧车道"
+    },
+    {
+      "id": "G049",
+      "field": "occupied_lane",
+      "expected": "检查区；右侧车道",
+      "predicted": "占用检查区和右侧车道"
+    },
+    {
+      "id": "G049",
+      "field": "congestion_level",
+      "expected": "缓慢",
+      "predicted": null
+    },
+    {
+      "id": "G049",
+      "field": "disposal_measure",
+      "expected": "交警现场查处",
+      "predicted": null
+    },
+    {
+      "id": "G049",
+      "field": "event_status",
+      "expected": "处理中",
+      "predicted": null
+    },
+    {
+      "id": "G050",
+      "field": "location",
+      "expected": "花城大道南向北人民医院急诊入口；公交港湾；掉头区",
+      "predicted": "花城大道南向北在人民医院急诊入口、公交港湾和掉头区附近"
+    },
+    {
+      "id": "G050",
+      "field": "vehicles_involved",
+      "expected": "救护车;私家车;电动自行车",
+      "predicted": [
+        "电动自行车",
+        "救护车"
+      ]
+    },
+    {
+      "id": "G050",
+      "field": "vehicle_count",
+      "expected": 3,
+      "predicted": null
+    },
+    {
+      "id": "G050",
+      "field": "road_impact",
+      "expected": "急诊入口车辆进出受阻",
+      "predicted": null
+    },
+    {
+      "id": "G050",
+      "field": "congestion_level",
+      "expected": "拥堵",
+      "predicted": null
+    },
+    {
+      "id": "G050",
+      "field": "event_status",
+      "expected": "发生中",
+      "predicted": null
+    }
+  ]
+}
